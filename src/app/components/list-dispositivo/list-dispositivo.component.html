@@ -1,0 +1,39 @@
+
+<div class="container">
+<div class=body class="card">
+
+<div class=body class="card-header">
+    <h3>Dispositivos</h3>
+</div>
+<input type="text"
+class="form-control mb-2"
+placeholder="Buscar dispositivo por ID POS"
+#txtSearch
+(keyup)="buscarPOSID( txtSearch.value)"/>
+<div class="card-body">
+    <table class="redTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>ID del dispositovo</th>
+            <th>version</th>
+            <th>dispositivo</th>
+            <th>novedad</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dispositivo of dispositivo |filtro:search ">
+            <td>{{dispositivo.isbn}}</td>
+            <td>{{dispositivo.id_pos}}</td>
+            <td>{{dispositivo.version}}</td>
+            <td>{{dispositivo.tipe}}</td>
+            <td>{{dispositivo.novedad}}</td>
+
+          </tr>
+        </tbody>
+       
+      </table>
+</div>
+</div>
+</div>
